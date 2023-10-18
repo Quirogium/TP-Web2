@@ -1,0 +1,29 @@
+<?php
+if (isset($_SESSION['user_name']) && $_SESSION['user_name'] === 'webadmin') {
+?>
+
+<form action="editar/<?= $autor->id_autor ?>" method="POST" class="my-4">
+    <div class="row">
+        <div class="col-3">
+            <div class="form-group">
+                <input placeholder="Nuevo Nombre" required name="nombre" type="text" class="form-control">
+            </div>
+        </div>
+
+        <div class="col-3">
+            <div class="form-group">
+                <input placeholder="Nueva Edad o 'Fallecido'" required name="Edad" type="text" class="form-control">
+            </div>
+        </div>
+
+        <div class="col-3">
+            <div class="form-group">
+                <input placeholder="Nueva Nacionalidad" required name="Nacionalidad" type="text" class="form-control">
+            </div>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-warning">Actualizar</button>
+</form>
+
+<?php } ?>

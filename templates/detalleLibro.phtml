@@ -1,0 +1,8 @@
+<h1>Detalle del libro</h1>
+<?php foreach ($Libros as $Libro): ?>
+    <ul class="list-group">
+        <li class="list-group-item item-task">
+            Título: <?= $Libro->Titulo ?> | Saga: <?= $Libro->Saga ?> | Género: <?= $Libro->Genero ?> | ID de Autor: <?= $Libro->id_autor ?> | Fecha de Publicación Original: <?= $Libro->Fecha_de_publicacion_original ?> | Fecha de Publicación en Traducción: <?= $Libro->Fecha_de_publicacion_traduccion ?> | Editorial Original: <?= $Libro->Editorial_original ?> | Editorial en Traducción: <?= $Libro->Editorial_traduccion ?>
+        </li>
+    </ul>
+<?php endforeach ?>

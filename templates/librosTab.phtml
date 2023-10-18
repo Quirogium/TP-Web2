@@ -1,0 +1,40 @@
+<h1>Lista de libros</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Título</th>
+            <th>Saga</th>
+            <th>Género</th>
+            <th>ID de Autor</th>
+            <th>Fecha de Publicación Original</th>
+            <th>Fecha de Publicación en Traducción</th>
+            <th>Editorial Original</th>
+            <th>Editorial en Traducción</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php foreach($Libros as $Libro): ?>
+        <tr>
+            <td><?=$Libro->Titulo?></td>
+            <td><?=$Libro->Saga?></td>
+            <td><?=$Libro->Genero ?></td>
+            <td><?=$Libro->id_autor ?></td>
+            <td><?=$Libro->Fecha_de_publicacion_original?></td>
+            <td><?=$Libro->Fecha_de_publicacion_traduccion?></td>
+            <td><?=$Libro->Editorial_original?></td>
+            <td><?=$Libro->Editorial_traduccion?></td>
+            <td>
+                <?php
+                if (isset($_SESSION['user_name']) && $_SESSION['user_name'] === 'webadmin') {  // Solo mostrar esto si el usuario logueado es el admin
+                ?>
+                <a href="eliminarLibro/<?= $Libro->id_libros ?>" class="btn btn-danger">Borrar</a>
+                <?php } ?>
+                <a href="verDetalleLibro/<?= $Libro->id_libros ?>" class="btn btn-info">Ver detalle</a>
+                <?php require 'templates/formEditLibros.phtml' ?>
+            </td>
+        </tr>
+    <?php endforeach ?>
+    </tbody>
+</table>
+

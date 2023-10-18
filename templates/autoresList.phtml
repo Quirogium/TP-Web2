@@ -1,0 +1,21 @@
+
+
+<h1>Lista de autores</h1>
+<ul class="list-group">
+<?php foreach ($autores as $autor): ?>
+    <li class="list-group-item item-task">
+        <div>
+            <b><?= $autor->id_autor ?></b> | <?= $autor->Nombre ?> | Edad: <?= $autor->Edad ?> | Nacionalidad: <?= $autor->Nacionalidad ?>
+        </div>
+        <div class="actions">
+            <?php
+            if (isset($_SESSION['user_name']) && $_SESSION['user_name'] === 'webadmin') {
+            ?>
+            <a href="eliminarAutor/<?= $autor->id_autor ?>" type="button" class="btn btn-danger ml-auto">Borrar</a>
+            <?php } ?>
+            <a href="mostrarAutor/<?= $autor->id_autor ?>" type="button" class="btn btn-success">Mostrar libros de este autor</a>
+            <?php require 'templates/formEditAutor.phtml' ?> 
+        </div>
+    </li>
+<?php endforeach ?>
+</ul>

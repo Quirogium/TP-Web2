@@ -1,0 +1,28 @@
+<?php
+if (isset($_SESSION['user_name']) && $_SESSION['user_name'] === 'webadmin') {  
+?>
+<form action="agregar" method="POST" class="my-4">
+    <div class="row">
+        <h1>Agregar autor</h1>
+        <div class="col-3">
+            <div class="form-group">
+                <label>Nombre del autor</label>
+                <input required name="nombre" type="text" class="form-control">
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="form-group">
+                <label>Edad del autor</label>
+                <input required name="edad" type="text" class="form-control">
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="form-group">
+                <label>Nacionalidad del autor</label>
+                <input required name="nacionalidad" type="text" class="form-control">
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Guardar</button>
+</form>
+<?php } ?>

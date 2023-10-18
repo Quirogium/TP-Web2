@@ -1,0 +1,60 @@
+<?php
+if (isset($_SESSION['user_name']) && $_SESSION['user_name'] === 'webadmin') {
+?>
+
+<form action="editarLibro/<?= $Libro->id_libros ?>" method="POST" class="my-4">
+    <div class="row">
+        <div class="col-3">
+            <div class="form-group">
+                <label>Nuevo Titulo<label>
+                <input required name="titulo" type="text" class="form-control">
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="form-group">
+                <label>Nueva Saga</label>
+                <input required name="saga" type="text" class="form-control">
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="form-group">
+                <label>Nuevo Género</label>
+                <input required name="genero" type="text" class="form-control">
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="form-group">
+                <label>ID de Autor</label>
+                <input required name="id_autor" type="text" class="form-control">
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="form-group">
+                <label>Nueva Fecha de Publicación Original</label>
+                <input required name="fecha_publicacion_original" type="text" class="form-control">
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="form-group">
+                <label>Nueva Fecha de Publicación en Traducción</label>
+                <input required name="fecha_publicacion_traduccion" type="text" class="form-control">
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="form-group">
+                <label>Nueva Editorial Original</label>
+                <input required name="editorial_original" type="text" class="form-control">
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="form-group">
+                <label>Nueva Editorial en Traducción</label>
+                <input required name="editorial_traduccion" type="text" class="form-control">
+            </div>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-warning">Actualizar</button>
+</form>
+
+<?php } ?>
